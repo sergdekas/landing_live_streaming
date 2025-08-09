@@ -1,0 +1,19 @@
+@use "variables" as v;
+
+%hover-black {
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      color: v.$color_black;
+    }
+  }
+}
+
+%hover-black-icon {
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      fill: v.$color_black;
+    }
+  }
+}

@@ -15,7 +15,10 @@
   "type": "commonjs",
   "source": "index.html",
   "scripts": {
-    "sass:watch": "sass --style=expanded --watch styles:dist"
+    "sass:watch": "sass --style=expanded --watch styles:dist",
+    "sass:watch-build": "sass --style=compressed --no-source-map --watch styles:dist",
+    "parcel:watch": "parcel serve --dist-dir public",
+    "parcel:build": "parcel build --dist-dir build --public-url ./"
   },
   "devDependencies": {
     "parcel": "^2.15.4",
