@@ -1,0 +1,223 @@
+@use "variables" as v;
+@use "mixins" as m;
+@use "placeholders";
+@use "sass:color";
+
+.hero {
+  position: relative;
+  max-width: 1260px;
+  height: 830px;
+  margin: 0 auto;
+  padding: 140px 0 0 0;
+  background: url("../assets/img/cloud_alpha.png") no-repeat center/contain;
+
+  &__content {
+    position: relative;
+    width: 900px;
+    margin: 0 auto;
+
+    .hero__title {
+      text-transform: uppercase;
+      @include m.font(110px, 700, v.$color_black);
+      line-height: 1;
+    }
+
+    .hero__action-btn {
+      width: 380px;
+      height: 80px;
+      border: none;
+      border-radius: 50px;
+      background: v.$color_black;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      @include m.font(28px, 500, v.$color_white);
+      @include m.position(absolute, 1, -1, bottom, right, 15px, 0);
+
+      @media (hover: hover) {
+        &:hover {
+          background-color: color.adjust(v.$color_black, $alpha: -0.35);
+        }
+        &:focus {
+          outline: none;
+        }
+        &:focus-visible {
+          outline: 2px solid v.$color_white;
+        }
+      }
+    }
+
+    @media (max-width: v.$media__lg) {
+      width: 100%;
+      max-width: 700px;
+      height: 500px;
+
+      .hero__title {
+        @include m.font(100px, 700, v.$color_black);
+      }
+
+      .hero__action-btn {
+        @include m.position(absolute, 1, -1, bottom, left, 0, 15px);
+      }
+    }
+
+    @media (max-width: v.$media__md) {
+      max-width: 560px;
+      height: 400px;
+
+      .hero__title {
+        @include m.font(75px, 700, v.$color_black);
+      }
+
+      .hero__action-btn {
+        width: 260px;
+        height: 60px;
+        @include m.font(18px, 400, v.$color_white);
+        @include m.position(absolute, 1, -1, bottom, left, 0, 0);
+      }
+    }
+
+    @media (max-width: v.$media__sm) {
+      max-width: 350px;
+      height: 280px;
+
+      .hero__title {
+        @include m.font(45px, 700, v.$color_black);
+      }
+    }
+  }
+
+  &__notify {
+    position: relative;
+    margin: 170px auto 0;
+    width: 680px;
+    height: 68px;
+    background-color: color.adjust(v.$color_white, $alpha: -0.9);
+    border-radius: 20px;
+    @include m.d-flex(flex-end, center, nowrap, row, 0);
+
+    &-img {
+      width: 126px;
+      height: 198px;
+      @include m.position(absolute, 1, -1, top, left, -75px, -35px);
+    }
+
+    &-content {
+      padding-right: 10px;
+      width: 465px;
+      height: 100%;
+      @include m.d-flex(center, center);
+      @include m.font(14px, 400, v.$color_black);
+      text-transform: uppercase;
+      line-height: 1;
+      border-right: 1px solid color.adjust(v.$color_white, $alpha: -0.5);
+    }
+
+    &-btn {
+      width: 120px;
+      height: 100%;
+      background: none;
+      border: none;
+      text-transform: uppercase;
+      line-height: 1;
+      transition: color 0.2s ease;
+      @include m.font(25px, 400, v.$color_black);
+      @extend %hover-light;
+
+      @media (hover: hover) {
+        &:focus {
+          outline: none;
+        }
+        &:focus-visible {
+          outline: 2px solid v.$color_white;
+          border-top-right-radius: 20px;
+          border-bottom-right-radius: 20px;
+        }
+      }
+    }
+
+    @media (max-width: v.$media__md) {
+      margin: 140px auto 0;
+      width: 100%;
+      max-width: 450px;
+      height: fit-content;
+
+      @include m.d-flex(start, center, nowrap, column, 0, 0);
+
+      &-content {
+        width: 100%;
+        padding: 10px 10px 10px 90px;
+        @include m.font(10px, 400, v.$color_black);
+        line-height: 1.4;
+        border-right: none;
+        border-bottom: 1px solid color.adjust(v.$color_white, $alpha: -0.5);
+      }
+
+      &-btn {
+        width: 100%;
+        padding: 15px 0;
+        @include m.font(30px, 400, v.$color_black);
+
+        @media (hover: hover) {
+          &:focus {
+            outline: none;
+          }
+          &:focus-visible {
+            outline: 2px solid v.$color_white;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 20px;
+          }
+        }
+      }
+    }
+
+    @media (max-width: v.$media__sm) {
+      &-img {
+        @include m.position(absolute, 1, -1, top, left, -45px, -15px);
+      }
+
+      &-content {
+        padding: 10px 10px 10px 110px;
+      }
+    }
+  }
+
+  &__scroll {
+    @include m.position(absolute, 1, -1, bottom, left, 200px, 10px);
+
+    &-content {
+      width: 30px;
+      height: 172px;
+      position: relative;
+      @include m.d-flex(start, center);
+      @include m.font(16px, 500, v.$color_white);
+      writing-mode: vertical-lr;
+      cursor: pointer;
+
+      &::after {
+        @include m.position(absolute, 1, -1, top, left, 97px, 14px);
+        content: "";
+        display: block;
+        width: 1px;
+        height: 75px;
+        background-color: v.$color_white;
+      }
+    }
+
+    @media (max-width: v.$media__lg) {
+      @include m.position(absolute, 1, -1, bottom, left, 130px, 10px);
+    }
+
+    @media (max-width: v.$media__sm) {
+      @include m.position(absolute, 1, -1, bottom, left, 200px, 10px);
+    }
+  }
+
+  @media (max-width: v.$media__md) {
+    padding: 110px 15px 0;
+    background: url("../assets/img/cloud_alpha.png") no-repeat 0 25% / contain;
+  }
+
+  @media (max-width: v.$media__sm) {
+    height: 700px;
+  }
+}

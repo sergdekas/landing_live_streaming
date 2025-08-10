@@ -9,6 +9,15 @@
   }
 }
 
+%hover-light {
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      color: v.$color_white;
+    }
+  }
+}
+
 %hover-black-icon {
   @media (hover: hover) {
     &:hover {
