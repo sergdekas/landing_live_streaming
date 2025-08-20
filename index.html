@@ -26,10 +26,10 @@
           </div>
           <div class="nav__links">
             <ul class="nav__links-list list" aria-label="header navigation links">
-              <li class="list__item" aria-label="firts link">
+              <li class="list__item">
                 <a href="#" class="list__item-link">about us</a>
               </li>
-              <li class="list__item" aria-label="second link">
+              <li class="list__item">
                 <a href="#" class="list__item-link">contact</a>
               </li>
             </ul>
@@ -75,7 +75,7 @@
           </div>
         </div>
       </section>
-      <section class="work-section">
+      <section class="work-section" aria-label="work section">
         <div class="container">
           <div class="work">
             <h2 class="work__title">How we work</h2>
@@ -137,7 +137,7 @@
 
       <hr class="divider">
 
-      <section class="about-section">
+      <section class="about-section" aria-label="about section">
         <div class="container">
           <div class="about">
             <div class="about__quality">
@@ -208,6 +208,45 @@
                   </svg>
                 </button>
               </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials-section" aria-label="testimonials section">
+        <div class="container">
+          <div class="testimonials">
+            <h2 class="testimonials__title">Testimonials</h2>
+
+            <div class="testimonials__slider slider">
+              <figure class="wave-card" aria-label="testimonials card">
+                <img class="wave-card__avatar" src="assets/img/avatar_alpha.png" alt="">
+
+                <blockquote class="wave-card__quote" cite="https://happyclient.com">
+                  <p>Очень хороший отзыв, который оставил довольный клиент. А тут я ещё не придумал что написать,
+                    поэтому просто добавил это предложение.</p>
+                </blockquote>
+              </figure>
+
+              <button class="slider__left-btn">
+                <svg class="slider__left-btn-icon" aria-label="arrow icon">
+                  <use href="assets/sprites.svg#arrow-icon"></use>
+                </svg>
+              </button>
+              <button class="slider__right-btn">
+                <svg class="slider__right-btn-icon" aria-label="arrow icon">
+                  <use href="assets/sprites.svg#arrow-icon"></use>
+                </svg>
+              </button>
+
+              <div class="slider__points">
+                <div class="slider__points-item"></div>
+                <div class="slider__points-item active"></div>
+                <div class="slider__points-item"></div>
+                <div class="slider__points-item"></div>
+                <div class="slider__points-item"></div>
+                <div class="slider__points-item"></div>
+              </div>
             </div>
           </div>
         </div>
