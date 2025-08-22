@@ -1,7 +1,9 @@
 node_modules
-dist
+dist/*.map
 .vscode
 .DS_Store
 public
 build
 .parcel-cache
+package.json
+package-lock.json
