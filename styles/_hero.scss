@@ -208,7 +208,7 @@
     }
 
     @media (max-width: v.$media__sm) {
-      @include m.position(absolute, 1, -1, bottom, left, 200px, 10px);
+      @include m.position(absolute, 1, -1, bottom, left, 120px, 10px);
     }
   }
 

@@ -9,6 +9,15 @@
   }
 }
 
+%hover-gray {
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      color: v.$color_gray;
+    }
+  }
+}
+
 %hover-light {
   @media (hover: hover) {
     &:hover {
@@ -23,6 +32,15 @@
     &:hover {
       cursor: pointer;
       fill: v.$color_black;
+    }
+  }
+}
+
+%hover-black-burger {
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      stroke: v.$color_black;
     }
   }
 }
